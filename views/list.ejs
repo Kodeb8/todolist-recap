@@ -1,12 +1,19 @@
-<!DOCTYPE>
-<html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<title>Todo List</title>
-	</head>
-	<body>
+<%- include("header"); -%>
 
-	<h1>  <%= helloWorld %> </h1>
+<h1>  <%= listHeader %> </h1>
 
-	</body>
-</html>
+<ul>
+	
+	<% for (i = 0; i < listArray.length ; i++) { %>
+		<input type="checkbox">
+		<p> <%= listArray[i] %>  </p>
+	<% } %>
+	
+</ul>
+
+<form method="post" action="/">
+	<input type="text" name="listItem" placeholder="Item">
+	<button type="submit" name="list" value=<%= listValue %> >+</button>
+</form>
+
+<%- include("footer"); -%>
