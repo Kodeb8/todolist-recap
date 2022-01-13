@@ -1,18 +1,22 @@
 <%- include("header"); -%>
 
-<h1>  <%= listHeader %> </h1>
+<div class="box" id="heading">
+	<h1>  <%= listHeader %> </h1>
+</div>
 
-<ul>
-	
-	<% for (i = 0; i < listArray.length ; i++) { %>
-		<input type="checkbox">
-		<p> <%= listArray[i] %>  </p>
-	<% } %>
-	
-</ul>
+<div class="box">
+	<ul>
+		<% for (i = 0; i < listArray.length ; i++) { %>
+			<div class="item">
+				<input type="checkbox">
+				<p> <%= listArray[i] %>  </p>
+			</div>
+		<% } %>
+	</ul>
+</div>
 
 <form method="post" action="/">
-	<input type="text" name="listItem" placeholder="Item">
+	<input type="text" name="listItem" placeholder="Item" autocomplete="off">
 	<button type="submit" name="list" value=<%= listValue %> >+</button>
 </form>
 

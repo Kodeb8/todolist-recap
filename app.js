@@ -33,7 +33,7 @@ app.post("/", function(req, res){
 	// Todo list
 	const item = req.body.listItem;
 	
-	// Send user to the correct list
+	// List control
 	if(req.body.list === "work"){
 		workItems.push(item);
 		res.redirect("/work");
